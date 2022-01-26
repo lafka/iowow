@@ -25,6 +25,11 @@
  * SOFTWARE.
  *************************************************************************************************/
 
+// uclibc does not include st_atim struct fields by default.
+#ifdef __UCLIBC__
+#define __USE_MISC
+#endif
+
 #include "iwcfg.h"
 #include "log/iwlog.h"
 #include "platform/iwp.h"
